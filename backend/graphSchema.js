@@ -7,7 +7,6 @@ var schema = new graphql.GraphQLSchema({
     fields: {
       contact: require("./contact/queries").contact,
       contacts: require("./contact/queries").contacts
-
     }
   }),
 
@@ -26,25 +25,6 @@ var schema = new graphql.GraphQLSchema({
         resolve:function(){return false}
       }
       
-      //all mutations involving an update of an entity
-      // update: {
-      //   type: new graphql.GraphQLObjectType({
-      //     name: 'RootUpdateType',
-      //     fields: {
-      //       contact: require("./contact/mutations").create
-      //     }
-      //   })
-      // },
-      
-      //all mutations involving a deletion
-      // delete: {
-      //   type: new graphql.GraphQLObjectType({
-      //     name: 'RootDeleteType',
-      //     fields: {
-      //       contact: require("./contact/mutations").create
-      //     }
-      //   })
-      // }
     }
   })
 });

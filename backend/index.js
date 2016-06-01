@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express()
+var graphql = require("graphql")
+var schema = require("./graphSchema")
+
 
 app.use(express.static('public'));
 
@@ -9,17 +12,11 @@ app.get('/', function (req, res) {
 
 
 //graph endpoint
-var graphql = require("graphql")
-
-
-var schema = require("./graphSchema")
-
 app.get('/graph', function (req, res) {
   var singleQuery = '{ contact(id:"295") { name } }';
   var rangeQuery = '{ contacts { id } }';
-  
-  var createContactMutation = 'mutation { create { contact(name:"Branson Gitomeh") { name } } }';
 
+  var createContactMutation = 'mutation { create { contact(name:"Branson Gitomeh") { name } } }';
 
   graphql.graphql(schema, createContactMutation).then(result => {
     console.log(result);
