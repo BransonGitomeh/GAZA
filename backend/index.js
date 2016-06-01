@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 
 
 //graph endpoint
-app.get('/graph', function (req, res) {
+app.post('/graph', function (req, res) {
   var singleQuery = '{ contact(id:"295") { name } }';
   var rangeQuery = '{ contacts { id } }';
 
