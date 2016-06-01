@@ -4,7 +4,9 @@ var schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      contact: require("./contact/graphType")
+      contact: require("./contact/queries").contact,
+      contacts: require("./contact/queries").contacts
+
     }
   })
 });

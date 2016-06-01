@@ -1,20 +1,24 @@
 var graphql = require("graphql")
 
 var db;
-require("../dbSchema")(function(err, models){
-    // console.log(models)
+require("../dbSchema")(function (err, models) {
     db = models
 })
 
-var type = {
-    type: graphql.GraphQLString,
+var type = new graphql.GraphQLObjectType({
+    name: 'contact',
+    fields: {
+        id: graphql.GraphQLString
+    },
     resolve() {
-        db.collections.user.find().exec(function(err, users){
+        db.collections.user.find().exec(function (err, users) {
             console.log(users)
         })
-        
-        return 'Branie';
+
+        return {
+            id:"200"
+        };
     }
-}
+})
 
 module.exports = type;

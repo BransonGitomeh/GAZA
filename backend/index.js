@@ -15,10 +15,11 @@ var graphql = require("graphql")
 var schema = require("./graphSchema")
 
 app.get('/graph', function (req, res) {
-  var query = '{ contact }';
+  var query = '{ contacts { id } }';
 
   graphql.graphql(schema, query).then(result => {
     console.log(result);
+    res.send(result)
   });
 });
 
