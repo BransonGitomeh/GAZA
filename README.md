@@ -9,7 +9,7 @@ $ git clone https://github.com/kamikazechaser/projectexpresso.git
 $ cd projectexpresso*
 $ cd backend
 $ npm install
-$ npm start
+$ node index.js
 ```
 ---
 
