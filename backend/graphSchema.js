@@ -4,14 +4,9 @@ var schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      hello: {
-        type: graphql.GraphQLString,
-        resolve() {
-          return 'world';
-        }
-      }
+      contact: require("./contact/graphType")
     }
   })
 });
 
-module.exports = schema
+module.exports = schema;

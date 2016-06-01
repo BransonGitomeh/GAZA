@@ -4,31 +4,26 @@ var app = express()
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-	res.send("welcome to projectExpresso");
+  res.send("welcome to projectExpresso");
 });
 
 
 //graph endpoint
 var graphql = require("graphql")
 
-var schema = require("./contact/graphSchema")
+
+var schema = require("./graphSchema")
 
 app.get('/graph', function (req, res) {
-	var query = '{ hello }';
+  var query = '{ contact }';
 
-	graphql.graphql(schema, query).then(result => {
-
-		// Prints
-		// {
-		//   data: { hello: "world" }
-		// }
-		console.log(result);
-
-	});
+  graphql.graphql(schema, query).then(result => {
+    console.log(result);
+  });
 });
 
 
 app.listen(3000, function () {
-	console.log('listening on *:3000');
+  console.log('listening on *:3000');
 });
 

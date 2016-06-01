@@ -1,0 +1,74 @@
+{
+  "data": {
+    "users": [],
+    "user": [
+      {
+        "id": 113
+      },
+      {
+        "id": 114
+      },
+      {
+        "id": 115
+      },
+      {
+        "id": 116
+      },
+      {
+        "id": 117
+      },
+      {
+        "id": 118
+      },
+      {
+        "id": 119
+      }
+    ]
+  },
+  "schema": {
+    "users": {
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "users": {},
+    "user": {
+      "id": 119
+    }
+  }
+}
