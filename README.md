@@ -1,4 +1,4 @@
-# ProjectExpresso
+# ProjectExpresso (@ProjectExpressoBot)
 
 This is a project to show how to work with a Express app with GraphQL and MongoDB persistence with waterline ORM...
 
