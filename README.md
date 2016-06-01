@@ -1,8 +1,8 @@
 # ProjectExpresso 
 
-This is a project to show how to work with a Express app with GraphQL and MongoDB persistence with waterline ORM...
+This is a project to show how to work with a ExpressJS app with GraphQL and MongoDB persistence with waterline ORM...
 
-## How to install the example
+## How to install the example 
 
 ```bash
 $ git clone https://github.com/kamikazechaser/projectexpresso.git
