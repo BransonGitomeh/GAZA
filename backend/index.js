@@ -1,27 +1,34 @@
 var express = require('express');
 var app = express()
-var http = require('http').Server(app);
-var io = require("socket.io")(http)
 
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/public/index.html');
+app.get('/', function (req, res) {
+	res.send("welcome to projectExpresso");
 });
 
-io.on("connection", function(socket) {
-	console.log("a user connected")
-	socket.on("disconnect", function() {
-		console.log("user disconnected")
-	})
 
-	socket.on("chat message", function(msg) {
-		console.log("message recieved: " + msg);
-		// return the message to the sender/everyone
-		io.emit('chat message', msg);
-	})
-})
+//graph endpoint
+var graphql = require("graphql")
 
-http.listen(3000, function() {
+var schema = require("./contact/graphSchema")
+
+app.get('/graph', function (req, res) {
+	var query = '{ hello }';
+
+	graphql.graphql(schema, query).then(result => {
+
+		// Prints
+		// {
+		//   data: { hello: "world" }
+		// }
+		console.log(result);
+
+	});
+});
+
+
+app.listen(3000, function () {
 	console.log('listening on *:3000');
 });
+
