@@ -1,6 +1,9 @@
 var User = {
-  identity: 'user',
+  identity: 'contact',
   attributes: {
+    id: {
+      type: 'string',
+    },
     name: {
       type: 'string',
     },

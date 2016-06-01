@@ -9,6 +9,7 @@ console.log(require("./contact/dbSchema"))
 
 collections.map(function (collection) {
     collection.connection = "disk";
+    collection.migration = "safe";
     collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
     orm.loadCollection(collectionInstance)
@@ -24,23 +25,11 @@ var config = {
     }
 }
 
-
-
 initialize = function (callback) {
     return orm.initialize(config, function (err, models) {
-        console.log("Innitialised connection")
-        // console.log(models.collections)
-
-        //test if the user can be saved
-        // models.collections.user.create({
-        //     name: "Branson",
-        //     age: Math.random()
-        // }).exec(function (err, user) {
-        //     assert.ifError(err)
-        //     console.log(user)
-        // })
-        
-        callback(err,models)
+        // assert.ifError(err)
+        console.log("Innitialised connection")        
+        callback(err,orm)        
     })
 }
 

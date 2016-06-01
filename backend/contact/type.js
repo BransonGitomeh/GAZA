@@ -7,9 +7,6 @@ module.exports = new graphQl.GraphQLObjectType({
 		id: {
 			type: graphQl.GraphQLID
 		},
-		adm: {
-			type: graphQl.GraphQLString
-		},
 		name: {
 			type: graphQl.GraphQLString
 		}

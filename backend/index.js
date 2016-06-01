@@ -15,9 +15,13 @@ var graphql = require("graphql")
 var schema = require("./graphSchema")
 
 app.get('/graph', function (req, res) {
-  var query = '{ contacts { id } }';
+  var singleQuery = '{ contact(id:"295") { name } }';
+  var rangeQuery = '{ contacts { id } }';
+  
+  var createContactMutation = 'mutation { create { contact(name:"Branson Gitomeh") { name } } }';
 
-  graphql.graphql(schema, query).then(result => {
+
+  graphql.graphql(schema, createContactMutation).then(result => {
     console.log(result);
     res.send(result)
   });
@@ -27,4 +31,6 @@ app.get('/graph', function (req, res) {
 app.listen(3000, function () {
   console.log('listening on *:3000');
 });
+
+
 

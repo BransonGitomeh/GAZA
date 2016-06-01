@@ -1,29 +1,28 @@
 var graphQl = require("graphql")
+var assert = require("assert")
 
 var db;
 require("../dbSchema")(function (err, models) {
     db = models
 })
 
-// console.log(require("./type"))
-
 module.exports = {
     contact: {
         args: {
-            first: {
+            id: {
                 type: graphQl.GraphQLID
             }
         },
         type: require("./type"),
         resolve: function (root, args) {
-            db.collections.user.find().exec(function (err, users) {
-                console.log(users)
+            return new Promise((resolve, reject) => {
+                console.log(args)
+                db.collections.contact.findOne(args).exec(function (err, contacts) {
+                    assert.ifError(err)
+                    console.log(contacts)
+                    resolve(contacts)
+                })
             })
-
-            return {
-                id: "aweosme",
-                name: "Branson Gitomeh Kuria"
-            }
         }
     },
     contacts: {
@@ -35,8 +34,8 @@ module.exports = {
         type: new graphQl.GraphQLList(require("./type")),
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
-                db.collections.user.find().exec(function (err, users) {
-                    resolve(users)
+                db.collections.contact.find().exec(function (err, contacts) {
+                    resolve(contacts)
                 })
             })
         }

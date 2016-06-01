@@ -2,27 +2,24 @@
   "data": {
     "users": [],
     "user": [
-      {
-        "id": 190
-      },
-      {
-        "id": 191
-      },
-      {
-        "id": 192
-      },
-      {
-        "id": 193
-      },
-      {
-        "id": 194
-      },
-      {
-        "id": 195
-      },
-      {
-        "id": 196
-      }
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "contact": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
     ]
   },
   "schema": {
@@ -45,17 +42,31 @@
       }
     },
     "user": {
+      "id": {
+        "type": "string"
+      },
       "name": {
         "type": "string"
       },
       "age": {
         "type": "string"
       },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "contact": {
       "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "string"
       },
       "createdAt": {
         "type": "datetime"
@@ -68,7 +79,8 @@
   "counters": {
     "users": {},
     "user": {
-      "id": 196
-    }
+      "id": 322
+    },
+    "contact": {}
   }
 }
