@@ -39,8 +39,8 @@ Gives
 
 * Asking for the name, surname, age and ID of user with ID 2
 ```graphql
-query RootQuery {
-	user (id:2) {
+query {
+	contact (id:2) {
     	number
         surname
         age
