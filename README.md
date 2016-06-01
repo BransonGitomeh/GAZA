@@ -6,6 +6,8 @@ This is a project to show how to work with a ExpressJS app with GraphQL and Mong
 
 ```bash
 $ git clone https://github.com/kamikazechaser/projectexpresso.git
+$ cd projectexpresso*
+$ cd backend
 $ npm install
 $ npm start
 ```
