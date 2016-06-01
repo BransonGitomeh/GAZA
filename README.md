@@ -64,11 +64,13 @@ Gives
 * Adding a new user called Linus Torvalds of age 45 and getting the new info
 ```graphql
 mutation RootMutation {
-	addContact (number: "r45678765", surname:"Stroustrup", age:64) {
-    	name
-        surname
-        _id
-        age
+	create {
+        contact (number: "r45678765", surname:"Stroustrup", age:64) {
+            name
+            surname
+            _id
+            age
+        }
     }
 }
 ```
@@ -77,11 +79,13 @@ Gives
 ```json
 {
     "data": {
-        "addContact": {
-            "number": "r45678765",
-            "surname": "Stroustrup",
-            "_id": "55ddf61ed082460325e2b65c",
-            "age": 64
+        "create":{
+            "contact":{
+                "number": "r45678765",
+                "surname": "Stroustrup",
+                "_id": "55ddf61ed082460325e2b65c",
+                "age": 64
+            }
         }
     }
 }
