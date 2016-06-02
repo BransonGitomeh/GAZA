@@ -39,9 +39,25 @@ to get all the contacts
 
 `
 query{
-  contacts{
-    name,
-    number
+  students{
+    id,
+    regNo,
+    studymode
+  }
+}
+`
+
+will result to 
+`
+{
+  "data": {
+    "students": [
+      {
+        "id": "1",
+        "regNo": "awes",
+        "studymode": "evening"
+      }
+    ]
   }
 }
 `
