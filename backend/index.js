@@ -4,7 +4,7 @@ var graphql = require("graphql")
 var schema = require("./graphSchema")
 var bodyParser  = require('body-parser');
 
-app.use(express.static('public'));
+app.use(express.static('graphiql'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
