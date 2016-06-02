@@ -34,7 +34,8 @@ var config = {
         },
         mongo: {
             adapter: 'mongo',
-            url:"mongodb://kamikazechaser:kamikazechaser@ds013221.mlab.com:13221/expresso"
+            url:"mongodb://kamikazechaser:kamikazechaser@ds015909.mlab.com:15909/expresso"
+             
         }
     }
 }
