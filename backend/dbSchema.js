@@ -4,12 +4,12 @@ var collections = []
 var assert = require("assert")
 
 collections.push(require("./contact/dbSchema"))
+collections.push(require("./student/dbSchema"))
 
-console.log(require("./contact/dbSchema"))
 
 collections.map(function (collection) {
-    collection.connection = "mongo";
-    collection.migration = "safe";
+    collection.connection = "mysql";
+    collection.migration = "drop";
     collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
     orm.loadCollection(collectionInstance)
