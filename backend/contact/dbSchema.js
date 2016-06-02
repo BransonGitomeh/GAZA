@@ -1,9 +1,6 @@
 var contact = {
   identity: 'contact',
   attributes: {
-    id: {
-      type: 'string',
-    },
     name: {
       type: 'string',
     },
