@@ -3,8 +3,8 @@ var orm = new waterlineInstance();
 var collections = []
 var assert = require("assert")
 
-collections.push(require("./contact/dbSchema"))
-collections.push(require("./student/dbSchema"))
+collections.push(require("./graphNodes/contact/dbSchema"))
+collections.push(require("./graphNodes/student/dbSchema"))
 
 
 collections.map(function (collection) {

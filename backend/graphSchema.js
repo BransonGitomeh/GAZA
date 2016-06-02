@@ -5,11 +5,11 @@ var schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      contact: require("./contact/queries").contact,
-      contacts: require("./contact/queries").contacts,
+      contact: require("./graphNodes/contact/queries").contact,
+      contacts: require("./graphNodes/contact/queries").contacts,
       
-      student: require("./student/queries").student,
-      students: require("./student/queries").students
+      student: require("./graphNodes/student/queries").student,
+      students: require("./graphNodes/student/queries").students
     }
   }),
 
@@ -22,8 +22,8 @@ var schema = new graphql.GraphQLSchema({
         type: new graphql.GraphQLObjectType({
           name: 'RootCreationType',
           fields: {
-            contact: require("./contact/mutations").create,
-            student: require("./student/mutations").create
+            contact: require("./graphNodes/contact/mutations").create,
+            student: require("./graphNodes/student/mutations").create
           }
         }),
         resolve:function(){return false}

@@ -4,7 +4,7 @@ var waterline = require("waterline")
 
 //rest of the crud - the cud
 var db;
-require("../dbSchema")(function (err, models) {    
+require("../../dbSchema")(function (err, models) {    
     if(models) console.log("connected to model")
     db = models.collections
 })
