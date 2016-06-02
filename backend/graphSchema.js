@@ -9,7 +9,11 @@ var schema = new graphql.GraphQLSchema({
       contacts: require("./graphNodes/contact/queries").contacts,
       
       student: require("./graphNodes/student/queries").student,
-      students: require("./graphNodes/student/queries").students
+      students: require("./graphNodes/student/queries").students,
+      
+      university: require("./graphNodes/university/queries").university,
+      universities: require("./graphNodes/university/queries").universities
+
     }
   }),
 

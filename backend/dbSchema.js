@@ -5,12 +5,14 @@ var assert = require("assert")
 
 collections.push(require("./graphNodes/contact/dbSchema"))
 collections.push(require("./graphNodes/student/dbSchema"))
+collections.push(require("./graphNodes/university/dbSchema"))
+
 
 
 collections.map(function (collection) {
-    collection.connection = "mysql";
+    collection.connection = "mongo";
     collection.migration = "drop";
-    collection.schema = true;
+    // collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
     orm.loadCollection(collectionInstance)
 })
@@ -34,7 +36,7 @@ var config = {
         },
         mongo: {
             adapter: 'mongo',
-            url:"mongodb://genesisServer:a10101995@ds015398.mongolab.com:15398/genesis"
+            url:"mongodb://genesisServer:a10101995@ds013221.mongolab.com:13221/premier"
         }
     }
 }
