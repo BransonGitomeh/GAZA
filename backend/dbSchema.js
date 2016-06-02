@@ -8,7 +8,7 @@ collections.push(require("./contact/dbSchema"))
 console.log(require("./contact/dbSchema"))
 
 collections.map(function (collection) {
-    collection.connection = "mysql";
+    collection.connection = "mongo";
     collection.migration = "safe";
     collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
@@ -19,6 +19,7 @@ var config = {
     adapters: {
         disk: require("sails-disk"),
         mysql: require('sails-mysql'),
+        mongo: require('sails-mongo'),
     },
 
     connections: {
@@ -31,6 +32,14 @@ var config = {
             password: 'password',
             database: 'testdb'
         },
+        mongo: {
+            adapter: 'mongo',
+            host: 'localhost', // defaults to `localhost` if omitted
+            port: 27017, // defaults to 27017 if omitted
+            user: 'username_here', // or omit if not relevant
+            password: 'password_here', // or omit if not relevant
+            database: 'database_name_here' // or omit if not relevant
+        }
     }
 }
 
