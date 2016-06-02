@@ -14,10 +14,10 @@ module.exports = {
             }
         },
         type: require("./type"),
-        resolve: function (root, args) {
+        resolve: function (root, args,Qvariables) {
             return new Promise((resolve, reject) => {
-                console.log(args)
-                db.collections.contact.findOne(args).exec(function (err, contacts) {
+                console.log(Qvariables)
+                db.collections.contact.findOne(Qvariables).exec(function (err, contacts) {
                     assert.ifError(err)
                     console.log(contacts)
                     resolve(contacts)

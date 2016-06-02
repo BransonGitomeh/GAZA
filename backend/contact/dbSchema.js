@@ -1,4 +1,4 @@
-var User = {
+var contact = {
   identity: 'contact',
   attributes: {
     id: {
@@ -7,10 +7,10 @@ var User = {
     name: {
       type: 'string',
     },
-    age: {
+    number: {
       type: 'string',
     }
   }
 }
 
-module.exports = User;
+module.exports = contact;

@@ -5,9 +5,12 @@ module.exports = new graphQl.GraphQLObjectType({
 	description: 'this is a single contact',
 	fields: () => ({
 		id: {
-			type: graphQl.GraphQLID
+			type: graphQl.GraphQLString
 		},
 		name: {
+			type: graphQl.GraphQLString
+		},
+		number: {
 			type: graphQl.GraphQLString
 		}
 	})

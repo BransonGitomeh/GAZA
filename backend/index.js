@@ -15,17 +15,16 @@ app.get('/', function (req, res) {
 
 //graph endpoint
 app.post('/graph', function (req, res) {
-  var singleQuery = '{ contact(id:"295") { name } }';
-  var rangeQuery = '{ contacts { id } }';
-
-  var createContactMutation = 'mutation { create { contact(name:"Branson Gitomeh") { name } } }';
-  
-  console.log(req.body.query)
+  // var singleQuery = '{ contact(id:"295") { name } }';
+  // var rangeQuery = '{ contacts { id } }';
+  // var createContactMutation = 'mutation { create { contact(name:"Branson Gitomeh") { name } } }';
+  // console.log(req.body.variables)
   
   const query = req.body.query
+  const variables = req.body.variables ? JSON.parse(req.body.variables) : ""
 
-  graphql.graphql(schema, query).then(result => {
-    console.log(result);
+  graphql.graphql(schema, query, null, variables).then(result => {
+    console.log(result)
     res.send(result)
   });
 });

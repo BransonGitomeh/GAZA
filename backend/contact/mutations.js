@@ -13,10 +13,13 @@ module.exports = {
     create: {
         args: {
             id: {
-                type: graphql.GraphQLID
+                type: graphql.GraphQLString
             },
             name: {
-                type: graphql.GraphQLID
+                type: graphql.GraphQLString
+            },
+            number: {
+                type: graphql.GraphQLString
             }
         },
         type: new graphql.GraphQLObjectType({
@@ -37,11 +40,11 @@ module.exports = {
                 }
             })
         }),
-        resolve(root, args) {
-            console.log(args)
-            return new Promise((resolve, reject) => {
-                console.log(args)
-                db.contact.create(args).exec(function (err, contact) {
+        resolve(root, args,variables) {
+            return new Promise((resolve, reject) => {                
+                console.log(variables)
+                
+                db.contact.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
                     resolve(contact)

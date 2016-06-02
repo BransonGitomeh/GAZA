@@ -8,7 +8,7 @@ collections.push(require("./contact/dbSchema"))
 console.log(require("./contact/dbSchema"))
 
 collections.map(function (collection) {
-    collection.connection = "disk";
+    collection.connection = "mysql";
     collection.migration = "safe";
     collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
@@ -18,20 +18,31 @@ collections.map(function (collection) {
 var config = {
     adapters: {
         disk: require("sails-disk"),
+        mysql: require('sails-mysql'),
     },
 
     connections: {
-        disk: { adapter: "disk" }
+        disk: { adapter: "disk" },
+        mysql: {
+            adapter: 'mysql',
+            host: 'localhost',
+            port: 3306,
+            user: 'testuser',
+            password: 'password',
+            database: 'testdb'
+        },
     }
 }
 
-initialize = function (callback) {
+
+function initialize(callback) {
     return orm.initialize(config, function (err, models) {
         // assert.ifError(err)
-        console.log("Innitialised connection")        
-        callback(err,orm)        
+        console.log("Innitialised connection")
+        callback(err, orm)
     })
 }
+
 
 module.exports = initialize
 
