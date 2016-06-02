@@ -6,12 +6,16 @@ var assert = require("assert")
 collections.push(require("./graphNodes/contact/dbSchema"))
 collections.push(require("./graphNodes/student/dbSchema"))
 collections.push(require("./graphNodes/university/dbSchema"))
+collections.push(require("./graphNodes/course/dbSchema"))
+collections.push(require("./graphNodes/level/dbSchema"))
+collections.push(require("./graphNodes/level_stage/dbSchema"))
+collections.push(require("./graphNodes/study_mode/dbSchema"))
 
 
 
 collections.map(function (collection) {
     collection.connection = "mongo";
-    collection.migration = "drop";
+    collection.migration = "safe";
     // collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
     orm.loadCollection(collectionInstance)
@@ -36,7 +40,7 @@ var config = {
         },
         mongo: {
             adapter: 'mongo',
-            url:"mongodb://genesisServer:a10101995@ds013221.mongolab.com:13221/premier"
+            url:"mongodb://server:a10101995@ds013221.mlab.com:13221/premier"
         }
     }
 }

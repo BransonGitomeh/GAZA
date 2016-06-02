@@ -34,11 +34,27 @@ module.exports = {
         type: new graphQl.GraphQLList(require("./type")),
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
-                db.collections.university.find().exec(function (err, contacts) {
-                    assert.ifError(err)
-                    console.log(contacts)
-                    resolve(contacts)
-                })
+                db.collections.university.find()
+                    // .populate("levels.students")
+                    // .populate("level_stages")
+                    // .populate("proschools.departments.units.other_prices")
+                    // .populate("proschools.departments.units.price")
+                    // .populate("tri_semesters")
+                    // .populate("active_tri_semester")
+                    // .populate("payment_methods")
+                    // .populate("level_stages")
+
+                    //student details and aggregation nodes
+                    // .populate("courses.students.course")
+                    // .populate("courses.students.course")
+                    // .populate("courses.students.level")
+                    // .populate("courses.students.level_stage")
+                    // .populate("courses.students.study_mode")
+                    .exec(function (err, contacts) {
+                        assert.ifError(err)
+                        console.log(contacts)
+                        resolve(contacts)
+                    })
             })
         }
     }

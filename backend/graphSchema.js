@@ -12,7 +12,10 @@ var schema = new graphql.GraphQLSchema({
       students: require("./graphNodes/student/queries").students,
       
       university: require("./graphNodes/university/queries").university,
-      universities: require("./graphNodes/university/queries").universities
+      universities: require("./graphNodes/university/queries").universities,
+      
+      course: require("./graphNodes/course/queries").course,
+      courses: require("./graphNodes/course/queries").courses
 
     }
   }),
@@ -27,7 +30,9 @@ var schema = new graphql.GraphQLSchema({
           name: 'RootCreationType',
           fields: {
             contact: require("./graphNodes/contact/mutations").create,
-            student: require("./graphNodes/student/mutations").create
+            student: require("./graphNodes/student/mutations").create,
+            university: require("./graphNodes/university/mutations").create,
+
           }
         }),
         resolve:function(){return false}

@@ -49,12 +49,23 @@ var contact = {
     disabled: {
       type: 'string',
     },
-    studymode: {
-      type: 'string',
-    },
+    
+    // to plae the student correctly in the university
     course: {
-      type: 'string',
-    }
+      model: "course"
+    },
+
+    level: {
+      model: "level"
+    },
+
+    level_stage: {
+      model: "level_stage"
+    },
+
+    study_mode: {
+      model: "study_mode"
+    },
   }
 }
 

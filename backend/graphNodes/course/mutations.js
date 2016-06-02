@@ -17,8 +17,8 @@ module.exports = {
             }
         },
         type: new graphQl.GraphQLObjectType({
-            name: 'createUniversity',
-            description: 'This is a mutation to help directly a contact. and only returns the id of the new student that has been created',
+            name: 'createCourse',
+            description: 'This is a mutation to help directly create a course. and only returns the id of the new course that has been created',
             fields: () => ({
                 id: {
                     type: graphQl.GraphQLID
@@ -29,7 +29,7 @@ module.exports = {
             return new Promise((resolve, reject) => {
                 console.log(variables)
 
-                db.university.create(variables).exec(function (err, contact) {
+                db.course.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
                     resolve(contact)
