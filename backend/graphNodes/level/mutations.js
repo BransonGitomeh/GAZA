@@ -12,13 +12,16 @@ require("../../dbSchema")(function (err, models) {
 module.exports = {
     create: {
         args: {
+            university: {
+                type: graphQl.GraphQLString,
+            },
             name: {
                 type: graphQl.GraphQLString,
             }
         },
         type: new graphQl.GraphQLObjectType({
-            name: 'createCourse',
-            description: 'This is a mutation to help directly create a course. and only returns the id of the new course that has been created',
+            name: 'createLevel',
+            description: 'This is a mutation to help directly create a level. and only returns the id of the new course that has been created',
             fields: () => ({
                 id: {
                     type: graphQl.GraphQLID
@@ -29,10 +32,10 @@ module.exports = {
             return new Promise((resolve, reject) => {
                 console.log(variables)
 
-                db.course.create(variables).exec(function (err, contact) {
+                db.level.create(variables).exec(function (err, level) {
                     assert.ifError(err)
-                    console.log(contact)
-                    resolve(contact)
+                    console.log(level)
+                    resolve(level)
                 })
             })
         }

@@ -12,12 +12,15 @@ require("../../dbSchema")(function (err, models) {
 module.exports = {
     create: {
         args: {
+            university: {
+                type: graphQl.GraphQLString,
+            },
             name: {
                 type: graphQl.GraphQLString,
             }
         },
         type: new graphQl.GraphQLObjectType({
-            name: 'createCourse',
+            name: 'createStudyMode',
             description: 'This is a mutation to help directly create a course. and only returns the id of the new course that has been created',
             fields: () => ({
                 id: {
@@ -29,7 +32,7 @@ module.exports = {
             return new Promise((resolve, reject) => {
                 console.log(variables)
 
-                db.course.create(variables).exec(function (err, contact) {
+                db.study_mode.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
                     resolve(contact)

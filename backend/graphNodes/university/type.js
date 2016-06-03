@@ -18,6 +18,15 @@ module.exports = new graphQl.GraphQLObjectType({
 		},
 		courses:{
 			type:new graphQl.GraphQLList(require("../course/type"))
-		}	
+		},
+		levels:{
+			type:new graphQl.GraphQLList(require("../level/type"))
+		},
+		level_stages:{
+			type:new graphQl.GraphQLList(require("../level_stage/type"))
+		},
+		study_modes:{
+			type:new graphQl.GraphQLList(require("../study_mode/type"))
+		}
 	})
 })

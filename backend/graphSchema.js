@@ -33,6 +33,9 @@ var schema = new graphql.GraphQLSchema({
             student: require("./graphNodes/student/mutations").create,
             university: require("./graphNodes/university/mutations").create,
             course: require("./graphNodes/course/mutations").create,
+            level: require("./graphNodes/level/mutations").create,
+            level_stage: require("./graphNodes/level_stage/mutations").create,
+            study_mode: require("./graphNodes/study_mode/mutations").create,
 
           }
         }),

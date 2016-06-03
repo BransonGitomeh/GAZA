@@ -101,14 +101,67 @@ to get a single university
 `
 query ($id:String) {
 	university(id:$id){
+    id,
     name,
+    courses{
+      id,
+      name
+    },
+    levels{
+      id,
+      name
+    },
+    level_stages{
+      name
+    }
   }
 }
+
 
 `
 and variables are 
 `
 {
-  "id": "5750ab7130c7a65225e50dfc"
+  "id": "57488aa921a7257c2e5488f6"
+}
+`
+
+
+to create a new level
+
+`
+mutation createLevel($university:String,$name:String) {
+  create{
+    level(university:$university,name:$name){
+      id
+    }
+  }
+}
+`
+
+`
+{
+  "university": "57488aa921a7257c2e5488f6",
+  "name": "Diploma"
+}
+`
+
+
+to create a new level
+
+`
+mutation ($university:String,$name:String) {
+  create{
+    level_stage(university:$university,name:$name){
+      id
+    }
+  }
+}
+`
+
+`
+{
+  "university": "57488aa921a7257c2e5488f6",
+  "name": "1.3"
 }
 `
