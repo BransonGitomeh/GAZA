@@ -37,7 +37,12 @@ var schema = new graphql.GraphQLSchema({
             level_stage: require("./graphNodes/level_stage/mutations").create,
             study_mode: require("./graphNodes/study_mode/mutations").create,
             payment_channel: require("./graphNodes/payment_channel/mutations").create,
-            semester: require("./graphNodes/semester/mutations").create
+            semester: require("./graphNodes/semester/mutations").create,
+            school: require("./graphNodes/school/mutations").create,
+            department: require("./graphNodes/department/mutations").create,
+            unit: require("./graphNodes/unit/mutations").create,
+            price: require("./graphNodes/price/mutations").create
+
           }
         }),
         resolve:function(){return false}

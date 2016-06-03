@@ -25,9 +25,11 @@ module.exports = {
                 .populate("study_modes")
                 .populate("semesters")
                 .populate("payment_channels")
+                .populate("schools.departments.units.prices")
                 .exec(function (err, contacts) {
                     assert.ifError(err)
-                    console.log(contacts)
+                    
+                   
                     resolve(contacts)
                 })
             })

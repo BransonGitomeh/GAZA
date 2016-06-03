@@ -1,4 +1,4 @@
-var waterlineInstance = require("waterline")
+var waterlineInstance = require("offshore")
 var orm = new waterlineInstance();
 var collections = []
 var assert = require("assert")
@@ -12,6 +12,10 @@ collections.push(require("./graphNodes/level_stage/dbSchema"))
 collections.push(require("./graphNodes/study_mode/dbSchema"))
 collections.push(require("./graphNodes/payment_channel/dbSchema"))
 collections.push(require("./graphNodes/semester/dbSchema"))
+collections.push(require("./graphNodes/school/dbSchema"))
+collections.push(require("./graphNodes/department/dbSchema"))
+collections.push(require("./graphNodes/unit/dbSchema"))
+collections.push(require("./graphNodes/price/dbSchema"))
 
 
 collections.map(function (collection) {

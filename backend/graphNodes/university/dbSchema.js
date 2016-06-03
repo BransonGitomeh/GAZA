@@ -33,6 +33,11 @@ var contact = {
       collection: "payment_channel",
       via:"university"
     },
+    
+    schools: {
+      collection: "school",
+      via:"university"
+    },
   }
 }
 

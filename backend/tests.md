@@ -128,6 +128,32 @@ query ($id:String) {
 }
 
 
+and also 
+
+`
+query ($id:String) {
+	university(id:$id){
+    id,
+    name,
+    schools{
+      id,
+      name,
+      departments {
+        id,
+        name,
+        units{
+          id,
+          name,
+          prices{
+            ammount
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 `
 and variables are 
 `

@@ -33,6 +33,9 @@ module.exports = new graphQl.GraphQLObjectType({
 		},
 		payment_channels:{
 			type:new graphQl.GraphQLList(require("../payment_channel/type"))
+		},
+		schools:{
+			type:new graphQl.GraphQLList(require("../school/type"))
 		}
 	})
 })
