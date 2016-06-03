@@ -10,7 +10,7 @@ module.exports = new graphQl.GraphQLObjectType({
 		name: {
 			type: graphQl.GraphQLString,
 		},
-		student: {
+		students: {
 			type: new graphQl.GraphQLList(require("../student/type"))
 		}
 	})

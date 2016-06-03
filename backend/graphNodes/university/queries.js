@@ -19,17 +19,15 @@ module.exports = {
                 console.log("You just asked for a single university")
                 console.log(Qvariables)
                 db.collections.university.findOne(Qvariables)
-                .populate("courses")
-                .populate("levels")
-                .populate("level_stages")
+                .populate("courses.students")
+                .populate("levels.students")
+                .populate("level_stages.students")
                 .populate("study_modes")
                 .populate("semesters")
                 .populate("payment_channels")
                 .populate("schools.departments.units.prices")
                 .exec(function (err, contacts) {
-                    assert.ifError(err)
-                    
-                   
+                    assert.ifError(err)   
                     resolve(contacts)
                 })
             })

@@ -49,7 +49,7 @@ module.exports = new graphQl.GraphQLObjectType({
 		teachingExperience: {
 			type: graphQl.GraphQLString,
 		},
-		sponsership: {
+		sponcership: {
 			type: graphQl.GraphQLString,
 		},
 		disabled: {
@@ -59,7 +59,13 @@ module.exports = new graphQl.GraphQLObjectType({
 			type: graphQl.GraphQLString,
 		},
 		course: {
-			type: graphQl.GraphQLString,
+			type: require("../course/type"),
+		},
+		level: {
+			type: require("../level/type"),
+		},
+		level_stage: {
+			type: require("../level_stage/type"),
 		}
 
 	})

@@ -54,7 +54,7 @@ module.exports = {
             teachingExperience: {
                 type: graphQl.GraphQLString,
             },
-            sponsership: {
+            sponcership: {
                 type: graphQl.GraphQLString,
             },
             disabled: {
@@ -64,6 +64,12 @@ module.exports = {
                 type: graphQl.GraphQLString,
             },
             course: {
+                type: graphQl.GraphQLString,
+            },
+            level: {
+                type: graphQl.GraphQLString,
+            },
+            level_stage: {
                 type: graphQl.GraphQLString,
             }
         },

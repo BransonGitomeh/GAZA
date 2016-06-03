@@ -1,9 +1,51 @@
 creating a new contact
 query:
 `
-mutation newStudent($s_a:String, $regNo:String, $names:String, $DOB:String, $Gender:String, $nationality:String, $id_passport:String, $maritalStatus:String, $contacts:String, $hometown:String, $email:String, $qualification:String, $grade:String, $teachingExperience:String, $sponcership:String, $disabled:String, $studymode:String, $course:String){
+mutation newStudent(
+  $s_a:String, 
+  $regNo:String, 
+  $names:String, 
+  $DOB:String, 
+  $Gender:String, 
+  $nationality:String, 
+  $id_passport:String, 
+  $maritalStatus:String, 
+  $contacts:String, 
+  $hometown:String, 
+  $email:String, 
+  $qualification:String, 
+  $grade:String, 
+  $teachingExperience:String, 
+  $sponcership:String, 
+  $disabled:String, 
+  $studymode:String, 
+  $course:String ,
+  $level:String, 
+  $level_stage:String
+){
   create{
-    student (s_a:$s_a, regNo:$regNo, names:$names, DOB:$DOB, Gender:$Gender, nationality:$nationality, id_passport:$id_passport, maritalStatus:$maritalStatus, contacts:$contacts, hometown:$hometown, email:$email, qualification:$qualification, grade:$grade,teachingExperience:$teachingExperience, sponsership:$sponcership, disabled:$disabled, studymode:$studymode, course:$course){
+    student (
+      s_a:$s_a, 
+      regNo:$regNo, 
+      names:$names, 
+      DOB:$DOB, 
+      Gender:$Gender, 
+      nationality:$nationality, 
+      id_passport:$id_passport, 
+      maritalStatus:$maritalStatus, 
+      contacts:$contacts, 
+      hometown:$hometown, 
+      email:$email, 
+      qualification:$qualification, 
+      grade:$grade,
+      teachingExperience:$teachingExperience, 
+      sponcership:$sponcership, 
+      disabled:$disabled, 
+      studymode:$studymode, 
+      course:$course, 
+      level:$level, 
+      level_stage:$level_stage
+    ){
       id
     }
   }
