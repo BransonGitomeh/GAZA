@@ -27,6 +27,12 @@ module.exports = new graphQl.GraphQLObjectType({
 		},
 		study_modes:{
 			type:new graphQl.GraphQLList(require("../study_mode/type"))
+		},
+		semesters:{
+			type:new graphQl.GraphQLList(require("../semester/type"))
+		},
+		payment_channels:{
+			type:new graphQl.GraphQLList(require("../payment_channel/type"))
 		}
 	})
 })

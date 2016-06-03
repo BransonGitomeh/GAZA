@@ -23,6 +23,16 @@ var contact = {
       collection: "study_mode",
       via:"university"
     },
+    
+    semesters: {
+      collection: "semester",
+      via:"university"
+    },
+    
+    payment_channels: {
+      collection: "payment_channel",
+      via:"university"
+    },
   }
 }
 

@@ -10,7 +10,8 @@ collections.push(require("./graphNodes/course/dbSchema"))
 collections.push(require("./graphNodes/level/dbSchema"))
 collections.push(require("./graphNodes/level_stage/dbSchema"))
 collections.push(require("./graphNodes/study_mode/dbSchema"))
-
+collections.push(require("./graphNodes/payment_channel/dbSchema"))
+collections.push(require("./graphNodes/semester/dbSchema"))
 
 
 collections.map(function (collection) {

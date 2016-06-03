@@ -113,6 +113,16 @@ query ($id:String) {
     },
     level_stages{
       name
+    },
+    study_modes{
+      name
+    },
+    semesters{
+      id,
+      name
+    },
+    payment_channels{
+      name
     }
   }
 }

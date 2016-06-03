@@ -23,6 +23,8 @@ module.exports = {
                 .populate("levels")
                 .populate("level_stages")
                 .populate("study_modes")
+                .populate("semesters")
+                .populate("payment_channels")
                 .exec(function (err, contacts) {
                     assert.ifError(err)
                     console.log(contacts)
