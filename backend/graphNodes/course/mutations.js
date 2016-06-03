@@ -12,6 +12,9 @@ require("../../dbSchema")(function (err, models) {
 module.exports = {
     create: {
         args: {
+            university:{
+                type: graphQl.GraphQLString,
+            },
             name: {
                 type: graphQl.GraphQLString,
             }

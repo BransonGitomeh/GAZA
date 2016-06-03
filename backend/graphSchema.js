@@ -32,7 +32,28 @@ var schema = new graphql.GraphQLSchema({
             contact: require("./graphNodes/contact/mutations").create,
             student: require("./graphNodes/student/mutations").create,
             university: require("./graphNodes/university/mutations").create,
+            course: require("./graphNodes/course/mutations").create,
 
+          }
+        }),
+        resolve:function(){return false}
+      },
+      
+      update: {
+        type: new graphql.GraphQLObjectType({
+          name: 'RootUpdateType',
+          fields: {
+            university: require("./graphNodes/university/mutations").update,
+          }
+        }),
+        resolve:function(){return false}
+      },
+      
+      delete: {
+        type: new graphql.GraphQLObjectType({
+          name: 'RootDeleteType',
+          fields: {
+            university: require("./graphNodes/university/mutations").delete,
           }
         }),
         resolve:function(){return false}

@@ -62,3 +62,53 @@ will result to
 }
 `
 
+
+updating a university
+`
+mutation createUniversity($id:String,$name:String) {
+  update{
+    university(id:$id,name:$name){
+      id
+    }
+  }
+}
+`
+
+and variables
+`
+{
+  "id": "5750ab7130c7a65225e50dfc",
+  "name":"wiuwiuwiuwiuwiu"
+}
+`
+
+finding courses and university
+`
+{
+  courses{
+    id,
+    name,
+    university{
+      id,
+      name
+    }
+  }
+}
+`
+
+to get a single university
+
+`
+query ($id:String) {
+	university(id:$id){
+    name,
+  }
+}
+
+`
+and variables are 
+`
+{
+  "id": "5750ab7130c7a65225e50dfc"
+}
+`

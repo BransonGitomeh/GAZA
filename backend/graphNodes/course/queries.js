@@ -34,7 +34,7 @@ module.exports = {
         type: new graphQl.GraphQLList(require("./type")),
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
-                db.collections.course.find().exec(function (err, contacts) {
+                db.collections.course.find().populate("university").exec(function (err, contacts) {
                     assert.ifError(err)
                     console.log(contacts)
                     resolve(contacts)

@@ -10,14 +10,17 @@ module.exports = {
     university: {
         args: {
             id: {
-                type: graphQl.GraphQLID
+                type: graphQl.GraphQLString
             }
         },
         type: require("./type"),
         resolve: function (root, args, Qvariables) {
             return new Promise((resolve, reject) => {
+                console.log("You just asked for a single university")
                 console.log(Qvariables)
-                db.collections.university.find(Qvariables).exec(function (err, contacts) {
+                db.collections.university.findOne(Qvariables)
+                .populate("courses")
+                .exec(function (err, contacts) {
                     assert.ifError(err)
                     console.log(contacts)
                     resolve(contacts)
@@ -35,6 +38,7 @@ module.exports = {
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
                 db.collections.university.find()
+                       .populate("courses")
                     // .populate("levels.students")
                     // .populate("level_stages")
                     // .populate("proschools.departments.units.other_prices")

@@ -10,6 +10,12 @@ module.exports = new graphQl.GraphQLObjectType({
 		name: {
 			type: graphQl.GraphQLString,
 		},
+		createdAt: {
+			type: graphQl.GraphQLString,
+		},
+		updatedAt: {
+			type: graphQl.GraphQLString,
+		},
 		courses:{
 			type:new graphQl.GraphQLList(require("../course/type"))
 		}	
