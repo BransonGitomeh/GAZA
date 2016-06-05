@@ -1,6 +1,6 @@
 creating a new contact
 query:
-`
+```
 mutation newStudent(
   $s_a:String, 
   $regNo:String, 
@@ -50,10 +50,10 @@ mutation newStudent(
     }
   }
 }
-`
+```
 with
 variables:
-`
+```
 {
   "s_a": "aa",
   "regNo": "awes",
@@ -74,12 +74,12 @@ variables:
   "studymode": "evening",
   "course": "diploma education"
 }
-`
+```
 
 
 to get all the contacts
 
-`
+```
 query{
   students{
     id,
@@ -87,10 +87,10 @@ query{
     studymode
   }
 }
-`
+```
 
 will result to 
-`
+```
 {
   "data": {
     "students": [
@@ -102,11 +102,11 @@ will result to
     ]
   }
 }
-`
+```
 
 
 updating a university
-`
+```
 mutation createUniversity($id:String,$name:String) {
   update{
     university(id:$id,name:$name){
@@ -114,18 +114,18 @@ mutation createUniversity($id:String,$name:String) {
     }
   }
 }
-`
+```
 
 and variables
-`
+```
 {
   "id": "5750ab7130c7a65225e50dfc",
   "name":"wiuwiuwiuwiuwiu"
 }
-`
+```
 
 finding courses and university
-`
+```
 {
   courses{
     id,
@@ -136,11 +136,11 @@ finding courses and university
     }
   }
 }
-`
+```
 
 to get a single university
 
-`
+```
 query ($id:String) {
 	university(id:$id){
     id,
@@ -168,11 +168,11 @@ query ($id:String) {
     }
   }
 }
-
+```
 
 and also 
 
-`
+```
 query ($id:String) {
 	university(id:$id){
     id,
@@ -194,20 +194,19 @@ query ($id:String) {
     }
   }
 }
-`
 
-`
+```
 and variables are 
-`
+```
 {
   "id": "57488aa921a7257c2e5488f6"
 }
-`
+```
 
 
 to create a new level
 
-`
+```
 mutation createLevel($university:String,$name:String) {
   create{
     level(university:$university,name:$name){
@@ -215,19 +214,19 @@ mutation createLevel($university:String,$name:String) {
     }
   }
 }
-`
+```
 
-`
+```
 {
   "university": "57488aa921a7257c2e5488f6",
   "name": "Diploma"
 }
-`
+```
 
 
 to create a new level
 
-`
+```
 mutation ($university:String,$name:String) {
   create{
     level_stage(university:$university,name:$name){
@@ -235,11 +234,11 @@ mutation ($university:String,$name:String) {
     }
   }
 }
-`
+```
 
-`
+```
 {
   "university": "57488aa921a7257c2e5488f6",
   "name": "1.3"
 }
-`
+```
