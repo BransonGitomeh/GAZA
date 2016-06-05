@@ -10,7 +10,7 @@ module.exports = new graphQl.GraphQLObjectType({
 		member: {
 			type: require("../member/type")
 		},
-		timeReceived: {
+		createdAt: {
 			type: graphQl.GraphQLString
 		},
 		message: {
