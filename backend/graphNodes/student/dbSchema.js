@@ -1,7 +1,7 @@
 var contact = {
   identity: 'student',
   attributes: {
-    "s/a": {
+    s_a: {
       type: 'string',
     },
     regNo: {

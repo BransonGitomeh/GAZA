@@ -55,8 +55,8 @@ module.exports = new graphQl.GraphQLObjectType({
 		disabled: {
 			type: graphQl.GraphQLString,
 		},
-		studymode: {
-			type: graphQl.GraphQLString,
+		study_mode: {
+			type: require("../study_mode/type"),
 		},
 		course: {
 			type: require("../course/type"),

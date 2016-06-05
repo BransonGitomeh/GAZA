@@ -1,7 +1,13 @@
 var contact = {
   identity: 'payment_channel',
   attributes: {
-    name: {
+    channel_name: {
+      type: 'string',
+    },
+    channel_number: {
+      type: 'string',
+    },
+    location: {
       type: 'string',
     },
     university: { model: "university" }

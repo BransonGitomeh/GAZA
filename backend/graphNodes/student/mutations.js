@@ -60,7 +60,7 @@ module.exports = {
             disabled: {
                 type: graphQl.GraphQLString,
             },
-            studymode: {
+            study_mode: {
                 type: graphQl.GraphQLString,
             },
             course: {
@@ -89,6 +89,7 @@ module.exports = {
                 db.student.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
+                    contact.study_mode ? console.log(contact.study_mode) : console.log("thre is no study mode")
                     resolve(contact)
                 })
             })

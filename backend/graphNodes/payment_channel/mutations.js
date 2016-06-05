@@ -15,7 +15,13 @@ module.exports = {
             university:{
                 type: graphQl.GraphQLString,
             },
-            name: {
+            channel_name: {
+                type: graphQl.GraphQLString,
+            },
+            channel_number: {
+                type: graphQl.GraphQLString,
+            },
+            location: {
                 type: graphQl.GraphQLString,
             }
         },

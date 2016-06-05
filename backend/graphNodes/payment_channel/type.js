@@ -7,14 +7,19 @@ module.exports = new graphQl.GraphQLObjectType({
 		id: {
 			type: graphQl.GraphQLString
 		},
-		name: {
+
+		channel_name: {
 			type: graphQl.GraphQLString,
 		},
+		channel_number: {
+			type: graphQl.GraphQLString,
+		},
+		location: {
+			type: graphQl.GraphQLString,
+		},
+		
 		university: {
 			type: require("../university/type"),
-		},
-		students: {
-			type: new graphQl.GraphQLList(require("../student/type"))
 		}
 	})
 })

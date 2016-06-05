@@ -21,7 +21,7 @@ collections.push(require("./graphNodes/price/dbSchema"))
 collections.map(function (collection) {
     collection.connection = "mongo";
     collection.migration = "safe";
-    // collection.schema = true;
+    collection.schema = true;
     var collectionInstance = waterlineInstance.Collection.extend(collection)
     orm.loadCollection(collectionInstance)
 })
@@ -55,10 +55,9 @@ function initialize(callback) {
     return orm.initialize(config, function (err, models) {
         // assert.ifError(err)
         console.log("Innitialised connection")
-        callback(err, orm)
+        callback(err, orm)        
     })
 }
 
 
 module.exports = initialize
-
