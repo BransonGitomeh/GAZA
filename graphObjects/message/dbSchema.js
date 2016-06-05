@@ -1,15 +1,14 @@
 var contact = {
   identity: 'message',
   attributes: {
-    names: {
+    message: {
       type: 'string',
     },
-    DOB: {
+    timeRecieved: {
       type: 'string',
     },
-    other_details: {
-      type: 'string',
-    },
+    member: {model: "member"},
+    
     church: { model: "church" }
   }
 }

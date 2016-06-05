@@ -144,6 +144,88 @@ Will return an array
 
 
 
+## Messages
+
+### to create a messages for your church
+
+```
+mutation ($church:String, $member:String, $message:String) {
+  create{
+    message (church:$church, member:$member, message:$message){
+      id
+    }
+  }
+}
+```
+
+
+With the variables
+```
+{
+  "church": "5754254717fab1450f66bb21",
+  "member": "5754342e01d423ef1d8d617e",
+  "message": "this is an awesome message to the church"
+}
+```
+Will return
+```
+{
+  "data": {
+    "create": {
+      "message": {
+        "id": "575439da5e62862023528ff4"
+      }
+    }
+  }
+}
+```
+
+notes:
+the creation of a member will only return an id, you can then store the details 
+you sent together with this returned id in a storage on the client to show later 
+if need be .
+
+
+### to get all the churches saved, plus the members in each
+```
+{
+  churches{
+    id,
+    name,
+    messages {
+      sender,
+      timeReceived
+      message,
+      member {
+        names
+      }
+    }
+  }
+}
+```
+Will return an array
+```
+{
+  "data": {
+    "churches": [
+      {
+        "id": "5754254717fab1450f66bb21",
+        "name": "Gathering",
+        "members": [
+          {
+            "DOB": "22/12/32324",
+            "other_details": "other details support will be added",
+            "names": "Branson Gitomeh Kuria"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+
+
 ## Members
 
 ### to create a member for church
@@ -193,11 +275,6 @@ if need be .
   churches{
     id,
     name,
-    events{
-      date,
-      other_details,
-      name
-    },
     members{
       DOB,
       other_details,
@@ -214,19 +291,7 @@ Will return an array
       {
         "id": "5754254717fab1450f66bb21",
         "name": "Gathering",
-        "events": [
-          {
-            "date": "3456787654",
-            "other_details": "this event will be awesome bla bla bla",
-            "name": "Baptism"
-          }
-        ],
         "members": [
-          {
-            "DOB": null,
-            "other_details": "other details support will be added",
-            "names": null
-          },
           {
             "DOB": "22/12/32324",
             "other_details": "other details support will be added",

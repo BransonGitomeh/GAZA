@@ -10,7 +10,11 @@ var contact = {
     other_details: {
       type: 'string',
     },
-    church: { model: "church" }
+    church: { model: "church" },
+    messages: {
+      collections: "message",
+      via:"member"
+    }
   }
 }
 

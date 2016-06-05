@@ -37,6 +37,7 @@ module.exports = {
                 db.collections.church.find()
                 .populate("events")
                 .populate("members")
+                .populate("messages.member")
                 .exec(function (err, contacts) {
                     resolve(contacts)
                 })

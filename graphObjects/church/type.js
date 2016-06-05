@@ -18,6 +18,9 @@ module.exports = new graphQl.GraphQLObjectType({
 		},
 		members: {
 			type: new graphQl.GraphQLList(require("../member/type"))
+		},
+		messages: {
+			type: new graphQl.GraphQLList(require("../message/type"))
 		}
 	})
 })

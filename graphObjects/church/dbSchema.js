@@ -14,6 +14,10 @@ var contact = {
     members: {
       collection:"member",
       via:"church"
+    },
+    messages: {
+      collection:"message",
+      via:"church"
     }
   }
 }
