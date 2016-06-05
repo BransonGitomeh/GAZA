@@ -2,12 +2,12 @@ var graphQl = require("graphql")
 var assert = require("assert")
 
 var db;
-require("../dbSchema")(function (err, models) {
+require("../../dbSchema")(function (err, models) {
     db = models
 })
 
 module.exports = {
-    contact: {
+    ministry: {
         args: {
             id: {
                 type: graphQl.GraphQLID
@@ -17,7 +17,7 @@ module.exports = {
         resolve: function (root, args,Qvariables) {
             return new Promise((resolve, reject) => {
                 console.log(Qvariables)
-                db.collections.contact.findOne(Qvariables).exec(function (err, contacts) {
+                db.collections.ministry.findOne(Qvariables).exec(function (err, contacts) {
                     assert.ifError(err)
                     console.log(contacts)
                     resolve(contacts)
@@ -25,7 +25,7 @@ module.exports = {
             })
         }
     },
-    contacts: {
+    ministries: {
         args: {
             first: {
                 type: graphQl.GraphQLID
@@ -34,7 +34,7 @@ module.exports = {
         type: new graphQl.GraphQLList(require("./type")),
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
-                db.collections.contact.find().exec(function (err, contacts) {
+                db.collections.ministry.find().exec(function (err, contacts) {
                     resolve(contacts)
                 })
             })

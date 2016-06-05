@@ -3,9 +3,12 @@ var orm = new waterlineInstance();
 var collections = []
 var assert = require("assert")
 
-collections.push(require("./graphObjects/contact/dbSchema"))
-
-console.log(require("./graphObjects/contact/dbSchema"))
+collections.push(require("./graphObjects/church/dbSchema"))
+collections.push(require("./graphObjects/event/dbSchema"))
+collections.push(require("./graphObjects/member/dbSchema"))
+collections.push(require("./graphObjects/message/dbSchema"))
+collections.push(require("./graphObjects/ministry/dbSchema"))
+collections.push(require("./graphObjects/page/dbSchema"))
 
 collections.map(function (collection) {
     collection.connection = "mongo";

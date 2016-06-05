@@ -4,7 +4,7 @@ var waterline = require("waterline")
 
 //rest of the crud - the cud
 var db;
-require("../dbSchema")(function (err, models) {    
+require("../../dbSchema")(function (err, models) {    
     if(models) console.log("connected to model")
     db = models.collections
 })
@@ -23,7 +23,7 @@ module.exports = {
             }
         },
         type: new graphql.GraphQLObjectType({
-            name: 'createContact',
+            name: 'createpage',
             description: 'this is a mutation to help directly a contact.',
             fields: () => ({
                 id: {

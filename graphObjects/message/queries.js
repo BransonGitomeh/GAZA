@@ -2,12 +2,12 @@ var graphQl = require("graphql")
 var assert = require("assert")
 
 var db;
-require("../dbSchema")(function (err, models) {
+require("../../dbSchema")(function (err, models) {
     db = models
 })
 
 module.exports = {
-    contact: {
+    message: {
         args: {
             id: {
                 type: graphQl.GraphQLID
@@ -25,7 +25,7 @@ module.exports = {
             })
         }
     },
-    contacts: {
+    messages: {
         args: {
             first: {
                 type: graphQl.GraphQLID

@@ -5,8 +5,12 @@ var schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-      contact: require("./contact/queries").contact,
-      contacts: require("./contact/queries").contacts
+      church: require("./graphObjects/church/queries").church,
+      member: require("./graphObjects/member/queries").member,
+      event: require("./graphObjects/member/queries").member,
+      message: require("./graphObjects/message/queries").message,
+      ministry: require("./graphObjects/message/queries").message,
+      page: require("./graphObjects/page/queries").page,
     }
   }),
 
@@ -19,12 +23,17 @@ var schema = new graphql.GraphQLSchema({
         type: new graphql.GraphQLObjectType({
           name: 'RootCreationType',
           fields: {
-            contact: require("./contact/mutations").create
+            church: require("./graphObjects/church/mutations").create,
+            member: require("./graphObjects/member/mutations").create,
+            event: require("./graphObjects/member/mutations").create,
+            message: require("./graphObjects/message/mutations").create,
+            ministry: require("./graphObjects/message/mutations").create,
+            page: require("./graphObjects/page/mutations").create,
           }
         }),
-        resolve:function(){return false}
+        resolve: function () { return false }
       }
-      
+
     }
   })
 });

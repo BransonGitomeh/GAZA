@@ -1,7 +1,7 @@
 var graphQl = require("graphql")
 
 module.exports = new graphQl.GraphQLObjectType({
-	name: 'contact',
+	name: 'page',
 	description: 'this is a single contact',
 	fields: () => ({
 		id: {

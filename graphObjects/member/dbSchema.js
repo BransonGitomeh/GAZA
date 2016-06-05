@@ -1,5 +1,5 @@
 var contact = {
-  identity: 'contact',
+  identity: 'member',
   attributes: {
     name: {
       type: 'string',
