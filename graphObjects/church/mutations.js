@@ -44,7 +44,7 @@ module.exports = {
             return new Promise((resolve, reject) => {                
                 console.log(variables)
                 
-                db.contact.create(variables).exec(function (err, contact) {
+                db.church.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
                     resolve(contact)

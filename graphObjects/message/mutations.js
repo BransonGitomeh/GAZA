@@ -15,10 +15,13 @@ module.exports = {
             id: {
                 type: graphql.GraphQLString
             },
-            name: {
+            names: {
                 type: graphql.GraphQLString
             },
-            number: {
+            DOB: {
+                type: graphql.GraphQLString
+            },
+            other_details: {
                 type: graphql.GraphQLString
             }
         },

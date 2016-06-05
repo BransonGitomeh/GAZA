@@ -1,12 +1,16 @@
 var contact = {
-  identity: 'contact',
+  identity: 'event',
   attributes: {
     name: {
       type: 'string',
     },
-    number: {
+    date: {
       type: 'string',
-    }
+    },
+    other_details: {
+      type: 'string',
+    },
+    church: { model: "church" }
   }
 }
 

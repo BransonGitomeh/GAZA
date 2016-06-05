@@ -15,10 +15,16 @@ module.exports = {
             id: {
                 type: graphql.GraphQLString
             },
-            name: {
+            church: {
                 type: graphql.GraphQLString
             },
-            number: {
+            names: {
+                type: graphql.GraphQLString
+            },
+            DOB: {
+                type: graphql.GraphQLString
+            },
+            other_details: {
                 type: graphql.GraphQLString
             }
         },

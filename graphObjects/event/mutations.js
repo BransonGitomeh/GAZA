@@ -4,8 +4,8 @@ var waterline = require("waterline")
 
 //rest of the crud - the cud
 var db;
-require("../../dbSchema")(function (err, models) {    
-    if(models) console.log("connected to model")
+require("../../dbSchema")(function (err, models) {
+    if (models) console.log("connected to model")
     db = models.collections
 })
 
@@ -18,7 +18,13 @@ module.exports = {
             name: {
                 type: graphql.GraphQLString
             },
-            number: {
+            date: {
+                type: graphql.GraphQLString
+            },
+            other_details: {
+                type: graphql.GraphQLString
+            },
+            church: {
                 type: graphql.GraphQLString
             }
         },
@@ -29,22 +35,19 @@ module.exports = {
                 id: {
                     type: graphql.GraphQLID
                 },
-                name: {
+                createdAt: {
                     type: graphql.GraphQLString
                 },
-                createdAt:{
-                    type: graphql.GraphQLString
-                },
-                updatedAt:{
+                updatedAt: {
                     type: graphql.GraphQLString
                 }
             })
         }),
-        resolve(root, args,variables) {
-            return new Promise((resolve, reject) => {                
+        resolve(root, args, variables) {
+            return new Promise((resolve, reject) => {
                 console.log(variables)
-                
-                db.contact.create(variables).exec(function (err, contact) {
+
+                db.event.create(variables).exec(function (err, contact) {
                     assert.ifError(err)
                     console.log(contact)
                     resolve(contact)

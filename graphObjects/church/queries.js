@@ -34,7 +34,10 @@ module.exports = {
         type: new graphQl.GraphQLList(require("./type")),
         resolve: function (root, args) {
             return new Promise((resolve, reject) => {
-                db.collections.contact.find().exec(function (err, contacts) {
+                db.collections.church.find()
+                .populate("events")
+                .populate("members")
+                .exec(function (err, contacts) {
                     resolve(contacts)
                 })
             })

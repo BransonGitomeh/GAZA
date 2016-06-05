@@ -6,6 +6,9 @@ var schema = new graphql.GraphQLSchema({
     name: 'RootQueryType',
     fields: {
       church: require("./graphObjects/church/queries").church,
+      churches: require("./graphObjects/church/queries").churches,
+
+
       member: require("./graphObjects/member/queries").member,
       event: require("./graphObjects/member/queries").member,
       message: require("./graphObjects/message/queries").message,
@@ -25,9 +28,9 @@ var schema = new graphql.GraphQLSchema({
           fields: {
             church: require("./graphObjects/church/mutations").create,
             member: require("./graphObjects/member/mutations").create,
-            event: require("./graphObjects/member/mutations").create,
+            event: require("./graphObjects/event/mutations").create,
             message: require("./graphObjects/message/mutations").create,
-            ministry: require("./graphObjects/message/mutations").create,
+            ministry: require("./graphObjects/ministry/mutations").create,
             page: require("./graphObjects/page/mutations").create,
           }
         }),

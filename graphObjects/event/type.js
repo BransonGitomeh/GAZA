@@ -1,7 +1,7 @@
 var graphQl = require("graphql")
 
 module.exports = new graphQl.GraphQLObjectType({
-	name: 'contact',
+	name: 'event',
 	description: 'this is a single contact',
 	fields: () => ({
 		id: {
@@ -10,7 +10,10 @@ module.exports = new graphQl.GraphQLObjectType({
 		name: {
 			type: graphQl.GraphQLString
 		},
-		number: {
+		date: {
+			type: graphQl.GraphQLString
+		},
+		other_details: {
 			type: graphQl.GraphQLString
 		}
 	})

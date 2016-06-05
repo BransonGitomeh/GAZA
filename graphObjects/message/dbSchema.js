@@ -1,12 +1,16 @@
 var contact = {
   identity: 'message',
   attributes: {
-    name: {
+    names: {
       type: 'string',
     },
-    number: {
+    DOB: {
       type: 'string',
-    }
+    },
+    other_details: {
+      type: 'string',
+    },
+    church: { model: "church" }
   }
 }
 

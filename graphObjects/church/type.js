@@ -12,6 +12,12 @@ module.exports = new graphQl.GraphQLObjectType({
 		},
 		number: {
 			type: graphQl.GraphQLString
+		},
+		events: {
+			type: new graphQl.GraphQLList(require("../event/type"))
+		},
+		members: {
+			type: new graphQl.GraphQLList(require("../member/type"))
 		}
 	})
 })

@@ -7,10 +7,13 @@ module.exports = new graphQl.GraphQLObjectType({
 		id: {
 			type: graphQl.GraphQLString
 		},
-		name: {
+		names: {
 			type: graphQl.GraphQLString
 		},
-		number: {
+		DOB: {
+			type: graphQl.GraphQLString
+		},
+		other_details: {
 			type: graphQl.GraphQLString
 		}
 	})
