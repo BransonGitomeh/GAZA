@@ -3,9 +3,9 @@ var orm = new waterlineInstance();
 var collections = []
 var assert = require("assert")
 
-collections.push(require("./contact/dbSchema"))
+collections.push(require("./graphObjects/contact/dbSchema"))
 
-console.log(require("./contact/dbSchema"))
+console.log(require("./graphObjects/contact/dbSchema"))
 
 collections.map(function (collection) {
     collection.connection = "mongo";
@@ -33,8 +33,8 @@ var config = {
             database: 'testdb'
         },
         mongo: {
-            adapter: 'mongo',
-            url:"mongodb://kamikazechaser:kamikazechaser@ds015909.mlab.com:15909/expresso"
+            adapter: 'mongo'
+            // url:"mongodb://kamikazechaser:kamikazechaser@ds015909.mlab.com:15909/expresso"
              
         }
     }
