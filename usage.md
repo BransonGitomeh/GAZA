@@ -1,4 +1,46 @@
 Intent is to make a simple backend to a church system
+
+The following is a list of query and variable combinations that can be by a client, (web/native app) to 
+create a data driven app. 
+
+`query` type `string`
+`variables` type `stringified JSON`
+
+an example of usage is like
+
+```
+var apiUrl = "http://awesomeChurch.com
+
+var queryString = `mutation ($name:String) {
+  create{
+    church(name:$name){
+      id
+    }
+  }
+}`
+
+var variablesString = JSON.stringify({
+   "name":"Deliverane church"
+})
+
+var request = $.ajax({
+  url: apiUrl,
+  method: "POST",
+  data: {
+    query:queryString,
+    variables:variablesString
+  },
+});
+ 
+request.done(function( msg ) {
+  //the result of the request, can be an error object or a data object, 
+  //or an object with both. this is as per the graphQl spec
+  
+  //do something awesome with this request
+  console.log(msg)
+});
+```
+
  # church/branch instance
 ### to create a church
 
